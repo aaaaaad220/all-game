@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع الألعاب</title>
+    <link  href="تنزيل (1).jpg" rel="icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #add8e6, #00008b);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            transition: background 0.5s ease; /* لتنعيم التغيير */
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .games-list {
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* جعل القائمة عمودية */
+            align-items: center;
+        }
+
+        li {
+            background-color: rgba(65, 145, 158, 0.8);
+            color: #333;
+            padding: 20px;
+            margin: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 8px;
+            display: inline-block;
+            width: 80%;
+            text-align: left;
+        }
+
+        li:hover {
+            background-color: rgb(57, 126, 98);
+            transform: scale(1.02);
+        }
+
+        .game-description {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #10cef5;
+            color: #060202;
+            padding: 5px;
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .color-picker {
+            margin: 20px auto;
+        }
+
+        input[type="color"] {
+            margin: 0 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #20b2aa;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #17a589;
+        }
+    </style>
+</head>
+<body>
+    <h1>اختر لعبتك</h1>
+
+    <div class="color-picker">
+        <label>اختر لون البداية:</label>
+        <input type="color" id="start-color-picker" value="#add8e6">
+        <label>اختر لون النهاية:</label>
+        <input type="color" id="end-color-picker" value="#00008b">
+        <button onclick="updateGradient()">تحديث الألوان</button>
+    </div>
+
+    <div class="games-list">
+        <ul>
+         <a href="xo bot.html" target="_blank">   <li onclick="openGame('game1.html')">
+
+                مع بوت  xo لعبه
+
+            <div class="game-description"> يمكنك لعبها مع بوت واظهار نتيجتك ونتيجه البوت في الاسفل سارع في اللعب وكن الفائز </div>
+            </li>
+        </a>
+            <!------------------------------->
+
+          <a href="5MN ALRRM.html" target="_blank"  >  <li onclick="openGame('game2.html')">
+            لعبه خمن الرقم 
+            <div class="game-description"> يتم وضع رقم عن طريق البوت وهنالك 3 مستويات وانت حاول بتخمين الرقم سارع بالتخمين هنالك وقت </div>
+            </li>
+            </a>
+            <!---------------------------------------------->
+
+           <a href="5mn ala3b.html" target="_blank"  > <li onclick="openGame('game3.html')">
+                لعبه خمن الاعب 
+            <div class="game-description"> هنالك لاعب ولديك اساله محدوده اسال وحاول معرفه لاعب كره القدم ربما يكون لاعبك المفضل ؟                </div>
+            </li>
+        </ul>
+    </div>
+    </a>
+    <!--------------------------------------------->
+    <footer>
+        Dev Faris Fadi Melebari 
+    </footer>
+
+    <script>
+        // // فتح اللعبة عند الضغط عليها
+        // function openGame() {
+        //     window.open(gameUrl, "_blank");
+        // }
+
+        // تحديث التدرج اللوني
+        function updateGradient() {
+            const startColor = document.getElementById('start-color-picker').value;
+            const endColor = document.getElementById('end-color-picker').value;
+
+            document.body.style.background = `linear-gradient(45deg, ${startColor}, ${endColor})`;
+            document.body.style.animation = "gradientAnimation 10s ease infinite";
+        }
+    </script>
+</body>
+</html>
